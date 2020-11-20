@@ -21,7 +21,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-weight: 400;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
 }
 
 /* links */
@@ -89,6 +90,10 @@ header a:hover {
   font-family: verdana, arial, helvetica, sans-serif;
 }
 
+#notice a {
+  color: rgb(22, 129, 76);
+}
+
 /* search form */
 
 .search-container {
@@ -103,6 +108,8 @@ header a:hover {
   box-sizing: border-box;
   height: 3.5vh;
   border: 1px solid gray;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
 }
 
 .search-input:focus {
@@ -131,11 +138,12 @@ header a:hover {
   width: 12vw;
   box-sizing: border-box;
   border: 1px solid #385898;
-  /* border-radius: 4px; */
   cursor: pointer;
   height: 3.5vh;
   background-color: white;
   color: #385898;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
 }
 
 #search-button:hover {
@@ -158,19 +166,12 @@ header a:hover {
 #photos-container {
   /* Prevent vertical gaps */
   line-height: 0;
-   
-  -webkit-column-count: 3;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    3;
-  -moz-column-gap:      0px;
   column-count:         3;
-  column-gap:           4px;  
+  column-gap:           4px;
 }
 
 @media (max-width: 900px) {
   #photos-container {
-  -moz-column-count:    2;
-  -webkit-column-count: 2;
   column-count:         2;
   }
 }

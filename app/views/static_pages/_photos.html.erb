@@ -21,7 +21,7 @@
           <%= link_to i, search_path(params: params.merge(page: i)) %>
         <% end %>
       <% end %>
-      <%= link_to '>', search_path(params: params.merge(page: forward)) if forward < photos.pages %>
+      <%= link_to '>', search_path(params: params.merge(page: forward)) if forward <= photos.pages %>
     </div>
   <% end %>
 <% end %>

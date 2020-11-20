@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
       @flickr = Flickr.new
       @params = {tags: params[:tags], tag_mode: 'all', page: params[:page], sort: 'relevance'}
       @photos = @flickr.photos.search(@params)
-      flash.now[:notice] = "No photos found with the given tags. (Separate keywords with commas.) Why not try #{random_tag}?" unless @photos.any?
+      flash.now[:notice] = "No photos found with the given tags. (Separate tags with commas.) Why not try #{random_tag}?" unless @photos.any?
     end
   end
 
