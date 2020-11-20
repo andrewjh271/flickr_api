@@ -18,7 +18,7 @@
     </header>
     <% if notice %>
       <div class='flash-container'>
-        <div id="notice"><%= notice.html_safe %></div>
+        <div id="notice"><%= "#{h(notice)} #{flash[:suggestion]}".html_safe %></div>
       </div>
     <% end %>
     <div class='page-body'>
