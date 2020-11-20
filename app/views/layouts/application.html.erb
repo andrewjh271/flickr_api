@@ -6,11 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>Flickr Search</header>
+    <header>
+      <%= link_to 'Flickr Search', root_path %>
+      <%= link_to 'About', about_path %>
+    </header>
     <% if notice %>
       <div class='flash-container'>
         <div id="notice"><%= notice %></div>
