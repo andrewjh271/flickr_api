@@ -1,24 +1,16 @@
-# README
+# Flickr API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Created as part of the Odin Project [curriculum](https://www.theodinproject.com/courses/ruby-on-rails/lessons/using-an-api). View live page.
 
-Things you may want to cover:
+### Functionality
 
-* Ruby version
+Search Flickr by User ID or Tags. If no results are found a suggested search is provided.
 
-* System dependencies
+### Thoughts
 
-* Configuration
+I used the [flickr](https://github.com/cyclotron3k/flickr) gem API kit, as it seemed to be the slightly more recently maintained version of the most popular `FlickRaw`. There is not much documentation for it, and one challenge was figuring out what I could do with the `Flickr::ResponseList` object that was returned after requesting data from the Flickr API. Calling `#methods` on the returned object gave me the most helpful information I could find.
 
-* Database creation
+The [figaro](https://github.com/laserlemon/figaro) gem generated a `config/application.yml` file where I could configure `ENV['FLICKR_API_KEY']` and `ENV['FLICKR_SHARED_SECRET']`.
 
-* Database initialization
+Some useful arguments for `flickr.photos.search` from the Flickr API documentation were `tags`, `tag_mode`, `sort`, `page`, `extras`, and `per_page`. I used `flickr.interestingness.getList` to help generate random search suggestions for either User ID or Tags after an unsuccessful search.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
