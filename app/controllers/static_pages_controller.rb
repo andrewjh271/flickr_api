@@ -31,13 +31,13 @@ class StaticPagesController < ApplicationController
   private
 
   def random_user
-    suggestion = @flickr.interestingness.getList(per_page: 1, page: (rand(100) + 1)).first.owner
+    suggestion = @flickr.interestingness.getList(per_page: 1, page: (rand(100) + 1))['photos'].first.owner
     view_context.link_to suggestion, search_path(params: { user_id: suggestion })
   end
 
   def random_tag
     loop do
-      suggestion = @flickr.interestingness.getList(per_page: 1, page: (rand(300) + 1), extras: 'tags').first['tags'].split.first(3).join(', ')
+      suggestion = @flickr.interestingness.getList(per_page: 1, page: (rand(300) + 1), extras: 'tags')['photos'].first['tags'].split.first(3).join(', ')
       return view_context.link_to suggestion, search_path(params: { tags: suggestion }) unless suggestion.blank?
     end
   end
